@@ -1,0 +1,35 @@
+//Stack in an array
+let stack = [];
+stack.push(21);
+console.log(stack); 
+stack.push(22);
+console.log(stack); 
+stack.push(23);
+console.log(stack); 
+stack.push(24);
+console.log(stack); 
+stack.push(25);
+console.log(stack); 
+stack.push(26);
+console.log("the final:");
+console.log(stack);
+console.log("Remove\t"+stack.pop()); 
+console.log(stack); 
+console.log("Remove\t"+stack.pop()); 
+console.log(stack); 
+console.log("Remove\t"+stack.pop());
+console.log(stack);
+//Output-
+//[ 21 ]
+//[ 21, 22 ]
+//[ 21, 22, 23 ]
+//[ 21, 22, 23, 24 ]
+//[ 21, 22, 23, 24, 25 ]
+//the final:
+//[ 21, 22, 23, 24, 25, 26 ]
+//Remove  26
+//[ 21, 22, 23, 24, 25 ]
+//Remove  25
+//[ 21, 22, 23, 24 ]
+//Remove  24
+//[ 21, 22, 23 ]
