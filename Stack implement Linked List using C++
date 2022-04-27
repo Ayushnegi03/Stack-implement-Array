@@ -1,0 +1,68 @@
+//Stack implement Linked List 
+//A stack is an abstract data structure that contains a collection of elements. Stack implements the LIFO mechanism 
+//i.e. the element that is pushed at the end is popped out first.
+#include<iostream>
+using namespace std;
+void PUSH(char Element, char STACK[], int *TOP, int Size)
+{
+ if(*TOP == -1)
+ {
+  STACK[Size - 1] = Element;
+  *TOP = Size - 1;
+ }
+ else if(*TOP == 0){
+  cout<<"The stack is already full. \n";
+ }
+ else{
+  STACK[(*TOP) - 1] = Element;
+  (*TOP)--;
+ }
+}
+void POP(char STACK[], int *TOP, int Size){
+ if(*TOP == -1)
+ {
+   cout<<"The stack is empty\n";
+ }
+ else
+ {
+  cout<<"Element Popped:"<< STACK[(*TOP)]<<endl;
+  if((*TOP) == Size - 1)
+  {
+    (*TOP) = -1;
+  }
+  else{
+    (*TOP)++;
+  }
+ }
+}
+int main() {
+  int Size = 4;
+  char STACK[Size];
+  int TOP = -1;
+  cout<<"Here is Stack implement Array"<<endl;
+  PUSH('A', STACK, &TOP, Size);
+  cout<<"Element on Top:"<<STACK[TOP]<<endl;
+  PUSH('B',STACK, &TOP, Size);
+  cout<<"Element on Top:"<<STACK[TOP]<<endl;
+  PUSH('C',STACK, &TOP, Size);
+  cout<<"Element on Top:"<< STACK[TOP]<<endl;
+  PUSH('D',STACK, &TOP, Size);
+  cout<<"Element on Top:"<<STACK[TOP]<<endl;
+  POP(STACK, &TOP, Size);
+  cout<<"Element on Top:"<<STACK[TOP]<<endl;
+  POP(STACK, &TOP, Size);
+  cout<<"Top: "<< TOP<<endl;
+  POP(STACK, &TOP, Size);
+  return 0;
+}
+//Output-
+//Here is Stack implement Array
+//Element on Top:A
+//Element on Top:B
+//Element on Top:C
+//Element on Top:D
+//Element Popped:D
+//Element on Top:C
+//Element Popped:C
+//Top: 2
+//Element Popped:B 
