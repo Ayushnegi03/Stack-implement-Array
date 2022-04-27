@@ -1,0 +1,50 @@
+#Stack implement Array
+from sys import maxsize
+def Stack():
+    STACK = []
+    return STACK
+def Empty(STACK):
+    return len(STACK) == 0
+def Push(STACK, item):
+    STACK.append(item)
+    print(" Pushing to Stack :"+item)
+def Pop(STACK):
+    if (Empty(STACK)):
+        return str(-maxsize -1)   
+    return STACK.pop()
+def Peek(STACK):
+    if (Empty(STACK)):
+        return str(-maxsize -1) 
+    return STACK[len(STACK) - 1]  
+STACK = Stack()
+Push(STACK,str(10))
+Push(STACK,str(20))
+Push(STACK,str(30))
+Push(STACK,str(40))
+Push(STACK,str(50))
+Push(STACK,str(60))
+Push(STACK,str(70))
+Push(STACK,str(80))
+Push(STACK,str(90))
+print(" Popped from stack:"+Pop(STACK))
+print(" Popped from stack:"+Pop(STACK))
+print(" Popped from stack:"+Pop(STACK))
+print("Here is final Stack:")
+print(STACK)
+#Output-
+#Pushing to Stack :10
+# Pushing to Stack :20
+# Pushing to Stack :30
+# Pushing to Stack :40
+# Pushing to Stack :50
+# Pushing to Stack :60
+# Pushing to Stack :70
+# Pushing to Stack :80
+# Pushing to Stack :90
+# Popped from stack:90
+# Popped from stack:80
+# Popped from stack:70
+#Here is final Stack:
+#['10', '20', '30', '40', '50', '60']
+
+
